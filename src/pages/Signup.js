@@ -51,8 +51,6 @@ export default class Signup extends React.Component
         this.onChangeLastName = this.onChangeLastName.bind(this);
         this.checkPasswords = this.checkPasswords.bind(this);
         this.signup = this.signup.bind(this)
-
-        console.log(env)
     }
 
     onChangeFirstName(event)
@@ -123,9 +121,7 @@ export default class Signup extends React.Component
 
         if (!this.checkPasswords())
             return
-        
-        console.log(this.state)
-
+    
         this.setState({
             inRequest : true
         })
