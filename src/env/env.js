@@ -1,4 +1,4 @@
-const isProd = true;
+const isProd = false;
 
 const prod = {
     API_SERVER : "https://eazley-budgets-api.herokuapp.com/api"

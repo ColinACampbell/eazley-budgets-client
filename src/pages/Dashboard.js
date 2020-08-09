@@ -83,7 +83,7 @@ class Dashboard extends React.Component {
         return (
 
             <div>
-                <MainAppBar title="Home"/>
+                <MainAppBar title="Home" history={this.props.history}/>
                 <div>
                     {accountInfo}
                 </div>

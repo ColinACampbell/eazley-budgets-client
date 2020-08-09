@@ -5,6 +5,7 @@ import Login from "./pages/Login"
 import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
 import Signup from "./pages/Signup";
+import UserProfile from "./pages/UserProfile"
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -22,7 +23,6 @@ const theme = createMuiTheme({
 
 class App extends React.Component {
 
-
   render() {
     return (
 
@@ -34,6 +34,7 @@ class App extends React.Component {
             <Route path="/signup" component={Signup} exact />
             <Route path="/dashboard" component={Dashboard} exact />
             <Route path="/dashboard/account/:id" component={Account}/> 
+            <Route path="/my-profile" component={UserProfile} exact/>
           </Switch>
         </Router>
       </MuiThemeProvider>
