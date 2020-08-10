@@ -2,7 +2,7 @@ import React from "react";
 import SimpleAlert from "../alert/SimpleAlert";
 import { Button, Modal, Paper } from "@material-ui/core";
 import appStore from "./../../redux/store/appStore"
-import {toggleAddAccModal, CLOSE_DEL_AC_MODAL} from "./../../redux/actions/nav-actions"
+import {toggleModal, CLOSE_DEL_AC_MODAL} from "./../../redux/actions/nav-actions"
 
 const paperStyle = {
     backgroundColor: "white",
@@ -57,7 +57,7 @@ export default class ConfirmModal extends React.Component {
 
     closeModal()
     {
-        appStore.dispatch(toggleAddAccModal(CLOSE_DEL_AC_MODAL))
+        appStore.dispatch(toggleModal(CLOSE_DEL_AC_MODAL))
     }
 
     render() {

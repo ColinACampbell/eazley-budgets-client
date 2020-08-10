@@ -7,7 +7,7 @@ import ConfirmModal from "./modal/ConfirmModal";
 
 import env from "./../env/env"
 import appStore from "./../redux/store/appStore";
-import { toggleAddAccModal, OPEN_TRANS_MODAL} from "./../redux/actions/nav-actions"
+import { toggleModal, OPEN_TRANS_MODAL} from "./../redux/actions/nav-actions"
 import { OPEN_DEL_AC_MODAL, CLOSE_DEL_AC_MODAL } from "./../redux/actions/nav-actions"
 
 
@@ -52,12 +52,12 @@ export default class Transactions extends React.Component
 
     openTransactionModal()
     {
-        appStore.dispatch(toggleAddAccModal(OPEN_TRANS_MODAL))
+        appStore.dispatch(toggleModal(OPEN_TRANS_MODAL))
     }
 
     openConfirmDeleteAccountModal()
     {
-        appStore.dispatch(toggleAddAccModal(OPEN_DEL_AC_MODAL))
+        appStore.dispatch(toggleModal(OPEN_DEL_AC_MODAL))
     }
     
 
@@ -69,7 +69,7 @@ export default class Transactions extends React.Component
             method : "DELETE"
         }).then((response)=>{
             // redirect the user
-            appStore.dispatch(toggleAddAccModal(CLOSE_DEL_AC_MODAL))
+            appStore.dispatch(toggleModal(CLOSE_DEL_AC_MODAL))
             this.props.history.push('/dashboard')
         })
     }

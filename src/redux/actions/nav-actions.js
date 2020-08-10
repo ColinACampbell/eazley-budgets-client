@@ -6,7 +6,7 @@ export const OPEN_DEL_AC_MODAL = "open_delete_ac_modal"
 export const CLOSE_DEL_AC_MODAL = "close_delete_ac_modal"
 
 
-export const toggleAddAccModal = (action) =>
+export const toggleModal = (action) =>
 {
     switch (action)
     {

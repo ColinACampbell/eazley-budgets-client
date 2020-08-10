@@ -3,7 +3,7 @@ import { Modal, Paper, Button, TextField } from "@material-ui/core"
 import SimpleAlert from "./../alert/SimpleAlert"
 import {updateTransactions} from "./../../redux/actions/http-actions"
 import appStore from "./../../redux/store/appStore"
-import {toggleAddAccModal, CLOSE_TRANS_MODAL} from "./../../redux/actions/nav-actions"
+import {toggleModal, CLOSE_TRANS_MODAL} from "./../../redux/actions/nav-actions"
 import env from "./../../env/env"
 
 
@@ -69,7 +69,7 @@ export default class TransactionModal extends React.Component
 
     closeModal()
     {
-        appStore.dispatch(toggleAddAccModal(CLOSE_TRANS_MODAL))
+        appStore.dispatch(toggleModal(CLOSE_TRANS_MODAL))
         this.setState({
             submitSuccess : false
         })

@@ -15,7 +15,8 @@ export default class UserProfile extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            userInfo : {}
+            userInfo : {},
+            delModalOpen : false
         }
     }
 
@@ -32,6 +33,13 @@ export default class UserProfile extends React.Component {
                     userInfo
                 })
             })
+    }
+
+    openDeleteAccountModal()
+    {
+        this.setState({
+            delModalOpen : true
+        })
     }
 
     render() {
@@ -63,7 +71,7 @@ export default class UserProfile extends React.Component {
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                         >
-                            <SimpleAlert type="warning" title="Danger Zone" style={{width:"100%"}}/>
+                            <SimpleAlert type="warning" title="Danger Zone" />
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>

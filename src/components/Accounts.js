@@ -3,7 +3,7 @@ import { Grid, Button, Menu, MenuItem } from "@material-ui/core";
 import {Add} from "@material-ui/icons"
 import  AccountModal from "./modal/AccountModal";
 import { TableCell, TableHead, Table, TableContainer, TableRow , TableBody, Paper} from "@material-ui/core";
-import { OPEN_MODAL, CLOSE_MODAL, toggleAddAccModal } from "./../redux/actions/nav-actions"
+import { OPEN_MODAL, CLOSE_MODAL, toggleModal } from "./../redux/actions/nav-actions"
 import appStore from "../redux/store/appStore"
 
 
@@ -63,7 +63,7 @@ class Accounts extends React.Component {
 
         let operation = this.state.isAccModalOpen ? CLOSE_MODAL : OPEN_MODAL;
 
-        appStore.dispatch(toggleAddAccModal(operation));   
+        appStore.dispatch(toggleModal(operation));   
     }
 
     createData(id,accountName, type, funds, description, hasLimitReached) {

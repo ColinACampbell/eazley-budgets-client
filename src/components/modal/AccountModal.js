@@ -1,6 +1,6 @@
 import React from "react";
 import navStore from "../../redux/store/appStore"
-import { CLOSE_MODAL, toggleAddAccModal } from "../../redux/actions/nav-actions"
+import { CLOSE_MODAL, toggleModal } from "../../redux/actions/nav-actions"
 import { updateAccounts } from "../../redux/actions/http-actions"
 import { Modal, Paper, Button, TextField, InputLabel, Select, MenuItem } from "@material-ui/core"
 
@@ -105,7 +105,7 @@ class AccountModal extends React.Component {
 
     onCloseModal()
     {
-        navStore.dispatch(toggleAddAccModal(CLOSE_MODAL))
+        navStore.dispatch(toggleModal(CLOSE_MODAL))
         this.setState({
             creationSuccess : false
         })
