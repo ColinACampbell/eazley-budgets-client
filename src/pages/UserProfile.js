@@ -22,6 +22,7 @@ export default class UserProfile extends React.Component {
             userInfo : {},
             delModalOpen : false
         }
+        this.deleteUserProfile = this.deleteUserProfile.bind(this)
     }
 
     componentDidMount() {
@@ -52,7 +53,7 @@ export default class UserProfile extends React.Component {
         .then((response)=>{
             console.log(response.status)
             if (response.status === 200)
-                this.history.push("/")
+                this.props.history.push("/")
         })
     }
 
