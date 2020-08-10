@@ -3,7 +3,7 @@ import { Grid, Button, Menu, MenuItem } from "@material-ui/core";
 import {Add} from "@material-ui/icons"
 import  AccountModal from "./modal/AccountModal";
 import { TableCell, TableHead, Table, TableContainer, TableRow , TableBody, Paper} from "@material-ui/core";
-import { OPEN_MODAL, CLOSE_MODAL, toggleModal } from "./../redux/actions/nav-actions"
+import { OPEN_ADD_AC_MODAL, CLOSE_ADD_AC_MODAL, toggleModal } from "./../redux/actions/nav-actions"
 import appStore from "../redux/store/appStore"
 
 
@@ -61,7 +61,7 @@ class Accounts extends React.Component {
             })
         })
 
-        let operation = this.state.isAccModalOpen ? CLOSE_MODAL : OPEN_MODAL;
+        let operation = this.state.isAccModalOpen ? CLOSE_ADD_AC_MODAL : OPEN_ADD_AC_MODAL;
 
         appStore.dispatch(toggleModal(operation));   
     }
