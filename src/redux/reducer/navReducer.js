@@ -23,12 +23,12 @@ const navReducer = ( state = { OPEN_ACC_MODAL : false, OPEN_TRANS_MODAL : false,
 
         case "OPEN_CONFIRM_MODAL" : return {
             ...state,
-            OPEN_DEL_AC_MODAL : true
+            OPEN_CONFIRM_MODAL : true
         } 
 
         case "CLOSE_CONFIRM_MODAL" : return {
             ...state,
-            OPEN_DEL_AC_MODAL : false
+            OPEN_CONFIRM_MODAL : false
         }
         
         default : return state

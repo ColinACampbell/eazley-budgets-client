@@ -48,7 +48,7 @@ export default class ConfirmModal extends React.Component {
     {
         appStore.subscribe(()=>{
 
-            let isOpen = appStore.getState().nav.OPEN_DEL_AC_MODAL
+            let isOpen = appStore.getState().nav.OPEN_CONFIRM_MODAL
             this.setState({
                 isOpen
             })
