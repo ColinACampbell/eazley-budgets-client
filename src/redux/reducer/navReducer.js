@@ -21,12 +21,12 @@ const navReducer = ( state = { OPEN_ACC_MODAL : false, OPEN_TRANS_MODAL : false,
             OPEN_TRANS_MODAL : true
         };
 
-        case "OPEN_DELETE_ACCOUNT_MODAL" : return {
+        case "OPEN_CONFIRM_MODAL" : return {
             ...state,
             OPEN_DEL_AC_MODAL : true
         } 
 
-        case "CLOSE_DELETE_ACCOUNT_MODAL" : return {
+        case "CLOSE_CONFIRM_MODAL" : return {
             ...state,
             OPEN_DEL_AC_MODAL : false
         }
