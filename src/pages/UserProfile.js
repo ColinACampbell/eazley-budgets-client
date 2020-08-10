@@ -11,6 +11,10 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import SimpleAlert from "./../components/alert/SimpleAlert"
 import UserDetails from "./../components/UserDetails"
 
+import {OPEN_CONFIRM_MODAL, toggleModal} from "./../redux/actions/nav-actions"
+import appStore from "./../redux/store/appStore"
+import ConfirmModal from "../components/modal/ConfirmModal";
+
 export default class UserProfile extends React.Component {
     constructor(props) {
         super(props)
@@ -22,6 +26,9 @@ export default class UserProfile extends React.Component {
 
     componentDidMount() {
         this.getUserInfo();
+        appStore.subscribe(()=>{
+            console.log(appStore.getState().nav.OPEN_CONFIRM_MODAL)
+        })
     }
 
     getUserInfo() {
@@ -35,11 +42,23 @@ export default class UserProfile extends React.Component {
             })
     }
 
+    deleteUserProfile()
+    {
+        fetch(`${env.API_SERVER}/user/delete-profile`,
+        {
+            credentials : "include",
+            method : "DELETE"
+        })
+        .then((response)=>{
+            console.log(response.status)
+            if (response.status === 200)
+                this.history.push("/")
+        })
+    }
+
     openDeleteAccountModal()
     {
-        this.setState({
-            delModalOpen : true
-        })
+        appStore.dispatch(toggleModal(OPEN_CONFIRM_MODAL));
     }
 
     render() {
@@ -62,6 +81,12 @@ export default class UserProfile extends React.Component {
                     </Grid>
                 </div>
 
+                <ConfirmModal 
+                    type="warning"
+                    title="Delete User Profile"
+                    description="Are you sure that you want to do this ? Please Confirm."
+                    onTrue={this.deleteUserProfile}/>
+
                 <Grid style={{marginTop : "30px",marginBottom:"20px"}}
                 container
                 justify="center">
@@ -75,7 +100,7 @@ export default class UserProfile extends React.Component {
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
-                                <Button> Delete Account </Button>
+                                <Button onClick={this.openDeleteAccountModal}> Delete Account </Button>
                             </Typography>
                         </AccordionDetails>
                     </Accordion>

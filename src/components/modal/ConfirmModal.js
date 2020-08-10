@@ -47,7 +47,6 @@ export default class ConfirmModal extends React.Component {
     componentDidMount()
     {
         appStore.subscribe(()=>{
-
             let isOpen = appStore.getState().nav.OPEN_CONFIRM_MODAL
             this.setState({
                 isOpen
@@ -65,9 +64,9 @@ export default class ConfirmModal extends React.Component {
             <Modal open={this.state.isOpen} style={modalStyle}>
                 <Paper elevation={10} style={paperStyle}>
                     <SimpleAlert
-                        type="warning"
-                        title="Delete Account"
-                        description="Are you sure that you want to do this ? Please Confirm." />
+                        type={this.props.type}
+                        title={this.props.title}
+                        description={this.props.description}/>
                     
 
                     <div style={{...paperRow, "padding" : "10px"}}>

@@ -87,7 +87,10 @@ export default class Transactions extends React.Component
                         <Button color="primary" onClick={this.openConfirmDeleteAccountModal}> <Delete/> </Button>
                     </div>
                     <TransactionModal accountInfo={this.state.accountInfo}/>
-                    <ConfirmModal onTrue={this.deleteAccount}/>
+                    <ConfirmModal onTrue={this.deleteAccount} 
+                        type="warning"
+                        title="Delete Account"
+                        description="Are you sure that you want to do this ? Please Confirm."/>
                     <TableContainer component={Paper}>
                         <Table  aria-label="simple table">
                             <TableHead>
