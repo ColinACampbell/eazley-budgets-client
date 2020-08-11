@@ -20,7 +20,10 @@ class HomeAppBar extends React.Component {
                     <Typography variant="h6" >
                         Eazley Budgets
                     </Typography>
+                    <div>
                     <Button color="inherit" style={{float:"right"}} onClick={()=> this.props.history.push('/login')}>Login</Button>
+                    <Button color="secondary" style={{float:"right"}} onClick={()=> this.props.history.push('/signup')}>Sign Up</Button>
+                    </div>
                 </Toolbar>
             </AppBar>
         )

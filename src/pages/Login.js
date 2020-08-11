@@ -96,11 +96,13 @@ class Login extends React.Component {
                         <h1 style={{textAlign:"center"}}> LOGIN </h1>
                         <div style={this.styles.inputContainer}>
                             <TextField style={this.styles.inputText} id="outlined-basic" label="Email" variant="outlined" type="email" 
+                            placeholder="Enter Email" 
                             value={this.state.userEmail}
                             onChange={this.onChangeEmail}/>
                         </div>
                         <div style={this.styles.inputContainer}>
                             <TextField style={this.styles.inputText} id="outlined-basic" label="Password" variant="outlined" type="password" 
+                            placeholder="Enter Password"
                             value={this.state.userPassword}
                             onChange={this.onChangePass}/>
                         </div>
