@@ -27,9 +27,6 @@ export default class UserProfile extends React.Component {
 
     componentDidMount() {
         this.getUserInfo();
-        appStore.subscribe(()=>{
-            console.log(appStore.getState().nav.OPEN_CONFIRM_MODAL)
-        })
     }
 
     getUserInfo() {
@@ -51,7 +48,6 @@ export default class UserProfile extends React.Component {
             method : "DELETE"
         })
         .then((response)=>{
-            console.log(response.status)
             if (response.status === 200)
                 this.props.history.push("/")
         })
@@ -63,7 +59,6 @@ export default class UserProfile extends React.Component {
     }
 
     render() {
-        console.log(this.state.userInfo)
 
         return (
             <div>

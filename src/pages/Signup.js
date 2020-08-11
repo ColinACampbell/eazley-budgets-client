@@ -117,7 +117,6 @@ export default class Signup extends React.Component
     signup()
     {
         this.checkPasswords();
-        console.log(this.state.wrongPasswords)
 
         if (!this.checkPasswords())
             return
