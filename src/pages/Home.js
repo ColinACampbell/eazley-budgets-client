@@ -27,7 +27,7 @@ class Home extends React.Component {
                             Please tread along carefully as certain aspects where focused on such as design practices and principles. <br/>
                             This is not a perfect project and there will be bugs. <br/>
                             If you are experiencing any you can contact colina.campbell.jr@gmail.com to report it <br/>
-                            <a href="https://github.com/ColinACampbell/eazley-budgets-client" style={{textDecoration:"none"}}> Source code ( Font End )  </a>
+                            <a href="https://github.com/ColinACampbell/eazley-budgets-client" style={{textDecoration:"none", marginBottom: "40px"}}> Source code ( Font End )  </a>
                         </small>
                     </div>
                 </Grid>
