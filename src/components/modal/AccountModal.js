@@ -96,7 +96,6 @@ class AccountModal extends React.Component {
                 this.setState({
                     creationSuccess : response.ok // creationSuccess is a bool used to enable or disable controls
                 })
-                appStore.dispatch(updateAccounts())
             }
         })
 
@@ -106,6 +105,7 @@ class AccountModal extends React.Component {
     onCloseModal()
     {
         navStore.dispatch(toggleModal(CLOSE_ADD_AC_MODAL))
+        appStore.dispatch(updateAccounts())
         this.setState({
             creationSuccess : false
         })

@@ -70,6 +70,7 @@ export default class TransactionModal extends React.Component
     closeModal()
     {
         appStore.dispatch(toggleModal(CLOSE_TRANS_MODAL))
+        appStore.dispatch(updateTransactions())
         this.setState({
             submitSuccess : false
         })
@@ -101,8 +102,6 @@ export default class TransactionModal extends React.Component
 
             if (response.status === 201)
             {
-                appStore.dispatch(updateTransactions())
-
                 this.setState({
                     submitSuccess : response.ok
                 })

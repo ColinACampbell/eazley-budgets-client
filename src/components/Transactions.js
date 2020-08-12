@@ -14,6 +14,8 @@ import { OPEN_CONFIRM_MODAL, CLOSE_CONFIRM_MODAL } from "./../redux/actions/nav-
 
 export default class Transactions extends React.Component
 {
+
+    __isMounted = false
     constructor(props)
     {
         super(props)
@@ -28,13 +30,24 @@ export default class Transactions extends React.Component
         this.deleteAccount = this.deleteAccount.bind(this)
     }
 
+
+    componentDidUpdate() { this.__isMounted = true}
+
     componentWillReceiveProps(nextProps)
     {
-        let rows = this.mapDataToRow(nextProps)
-        this.setState({
-            rows,
-            accountInfo : nextProps.accountInfo
-        })
+        if (this.__isMounted)
+        {
+            let rows = this.mapDataToRow(nextProps)
+            this.setState({
+                rows,
+                accountInfo : nextProps.accountInfo
+            })
+        }
+    }
+
+    componentDidMount()
+    {
+        this.__isMounted = false
     }
 
     mapDataToRow(props)

@@ -10,6 +10,9 @@ import env from "./../env/env"
 
 export default class Account extends React.Component {
 
+
+    __isMounted = false;
+
     constructor(props) {
         super(props)
         this.state = {
@@ -23,17 +26,26 @@ export default class Account extends React.Component {
     componentDidMount() {
         const { match: { params } } = this.props;
 
-        appStore.subscribe(()=>{
-            if (appStore.getState().http.update === "transactions")
-            {
-                this.getAccountInfo(params.id);
-                this.getTransactions(params.id)
-                appStore.dispatch(reset())
-            }
-        })
+        this.__isMounted = true;
 
-        this.getTransactions(params.id)
-        this.getAccountInfo(params.id)
+        if (this.__isMounted)
+        {
+            appStore.subscribe(()=>{
+                if (appStore.getState().http.update === "transactions")
+                {
+                    this.getAccountInfo(params.id);
+                    this.getTransactions(params.id)
+                    appStore.dispatch(reset())
+                }
+            })
+            this.getTransactions(params.id)
+            this.getAccountInfo(params.id)
+        }
+    }
+
+    componentWillUnmount()
+    {
+        this.__isMounted = false
     }
 
 

@@ -61,7 +61,7 @@ export default class ConfirmModal extends React.Component {
 
     render() {
         return (
-            <Modal open={this.state.isOpen} style={modalStyle}>
+            <Modal open={this.state.isOpen || false} style={modalStyle}>
                 <Paper elevation={10} style={paperStyle}>
                     <SimpleAlert
                         type={this.props.type}
