@@ -10,7 +10,6 @@ import env from "./../env/env"
 
 export default class Account extends React.Component {
 
-
     __isMounted = false;
 
     constructor(props) {
