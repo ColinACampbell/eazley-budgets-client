@@ -14,6 +14,8 @@ Front end code to the [Eazley Bugdets App](https://eazley-budgets-client.herokua
 - Google Chrome updates are making it difficult to use the app properly ( security features ).
 - The free Heroku instance takes a while to start up. The backend is on an independent instance, so it will take a while to start to respond to the client's request.
 
+# React Default README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
