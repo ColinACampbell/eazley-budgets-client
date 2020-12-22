@@ -1,3 +1,19 @@
+# Eazley Budgets Client
+
+Front end code to the [Eazley Bugdets App](https://eazley-budgets-client.herokuapp.com/). 
+
+## In building this project, I learned 
+- How to use React to build a front end app.
+- How to use routing with React-Router-Dom.
+- The use of React's virtual DOM and reactive style of changing the app's state
+- Using the fetch api to GET, POST, UPDATE, PUT and DELETE using REST-API architectural style to communicate with the backend.
+- Configuring CROSS-ORIGIN-REQUESTS.
+
+## Things to note
+- The backend code is not public and not available because it contains production environment credentials to database instanced use to store data
+- Google Chrome updates are making it difficult to use the app properly ( security features ).
+- The free Heroku instance takes a while to start up. The backend is on an independent instance, so it will take a while to start to respond to the client's request.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
